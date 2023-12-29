@@ -10,9 +10,9 @@ export default function Home({ showNav }) {
       <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row justify-center items-center md:gap-28 h-full px-4">
         <section className="flex flex-col justify-center h-full">
           <h2 className="text-4xl sm:text-7xl font-bold text-white">
-            I'm Full Stack Web Developer
+            Full Stack Web Developer
           </h2>
-          <p className="text-gray-500 py-5 max-w-md">
+          <p className="text-gray-500 py-5 max-w-md text-xl">
             I specialize in building and designing web applications with React
             and Rails. Currently, I'm enjoying my time hanging out with family
             and creating full stack projects using technologies like: React,
@@ -21,7 +21,7 @@ export default function Home({ showNav }) {
           <div className="btn">
             <button className="group text-white text-xl w-fit px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-gradient-to-r from-slate-500 to-slate-900 cursor-pointer">
               Porfolio{" "}
-              <span className="ml-2 group-hover:rotate-90 duration-200 group-hover:text-slate-500">
+              <span className="ml-2 group-hover:rotate-90 duration-200 group-hover:text-black">
                 <RxDoubleArrowRight size={25} />
               </span>
             </button>
@@ -30,7 +30,7 @@ export default function Home({ showNav }) {
         {!showNav && (
           <div className="hero-image">
             <img
-              className="rounded-2xl mx-auto drop-shadow-ds  border-2 border-slate-300"
+              className="rounded-2xl mx-auto border-2 border-slate-300 hover:drop-shadow-ds hover:cursor-pointer duration-200"
               src={heroImage}
               alt="Eric McKee"
             />
