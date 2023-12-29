@@ -11,7 +11,9 @@ export default function Navbar({ showNav, onShowNav }) {
   return (
     <nav className="flex justify-between items-center w-full h-20 p-4 text-white bg-black fixed">
       <section>
-        <h1 className="text-5xl font-signature ml-2">Eric</h1>
+        <h1 className="text-5xl font-signature ml-2 cursor-pointer hover:drop-shadow-ds duration-200 hover:border-b-2">
+          Eric
+        </h1>
       </section>
       <FaBars
         onClick={() => onShowNav()}
@@ -22,7 +24,7 @@ export default function Navbar({ showNav, onShowNav }) {
         {navLinks.map(({ link, id }) => (
           <li
             key={id}
-            className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-110 duration-100"
+            className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-110 duration-200"
           >
             {link}
           </li>
