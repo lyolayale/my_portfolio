@@ -45,7 +45,7 @@ export default function Portfolio() {
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-10">
-          <p className="text-5xl font-bold inline border-b-4 border-gray-500">
+          <p className="text-5xl font-bold inline border-b-4 border-gray-500 p-2">
             My Portfolio
           </p>
           <p className="py-10 text-xl">

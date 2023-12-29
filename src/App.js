@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import SocialMedia from "./components/SocialMedia";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
+import Experience from "./components/Experience";
 
 export default function App() {
   const [showNav, setShowNav] = useState(false);
@@ -17,6 +18,7 @@ export default function App() {
       <Home showNav={showNav} />
       <About />
       <Portfolio />
+      <Experience />
       <SocialMedia />
     </div>
   );
