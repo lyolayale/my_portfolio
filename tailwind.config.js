@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: { signature: ["Great Vibes"] },
+    dropShadow: { ds: "0 7px 7px #fff" },
   },
   plugins: [],
 };
