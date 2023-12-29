@@ -1,7 +1,7 @@
 import heroImage from "../assets/me.png";
 import { RxDoubleArrowRight } from "react-icons/rx";
 
-export default function Home() {
+export default function Home({ showNav }) {
   return (
     <section
       name="home"
@@ -27,13 +27,15 @@ export default function Home() {
             </button>
           </div>
         </section>
-        <div className="hero-image">
-          <img
-            className="rounded-2xl mx-auto drop-shadow-ds  border-2 border-slate-300"
-            src={heroImage}
-            alt="Eric McKee"
-          />
-        </div>
+        {!showNav && (
+          <div className="hero-image">
+            <img
+              className="rounded-2xl mx-auto drop-shadow-ds  border-2 border-slate-300"
+              src={heroImage}
+              alt="Eric McKee"
+            />
+          </div>
+        )}
       </div>
     </section>
   );

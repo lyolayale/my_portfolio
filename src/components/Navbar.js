@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-export default function Navbar() {
-  const [showNav, setShowNav] = useState(false);
-
+export default function Navbar({ showNav, onShowNav }) {
   const navLinks = [
     { id: crypto.randomUUID(), link: "home" },
     { id: crypto.randomUUID(), link: "about" },
@@ -17,7 +14,7 @@ export default function Navbar() {
         <h1 className="text-5xl font-signature ml-2">Eric</h1>
       </section>
       <FaBars
-        onClick={() => setShowNav(prev => !prev)}
+        onClick={() => onShowNav()}
         className="md:hidden cursor-pointer mr-4 text-gray-500 z-10 hover:scale-110 duration-100"
         size={30}
       />
