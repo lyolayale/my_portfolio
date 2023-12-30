@@ -40,7 +40,7 @@ export default function ContactForm() {
               className="p-2 bg-transparent border border-1 rounded-md text-white focus:outline-none hover:scale-[1.01] duration-200"
               name="message"
               rows="10"
-              placeholder="Enter your message"
+              placeholder="Enter your message here"
               required
               minLength={10}
               autoComplete="off"
