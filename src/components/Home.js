@@ -1,5 +1,6 @@
 import heroImage from "../assets/me.png";
 import { RxDoubleArrowRight } from "react-icons/rx";
+import { Link } from "react-scroll";
 
 export default function Home({ showNav }) {
   return (
@@ -19,22 +20,28 @@ export default function Home({ showNav }) {
             Tailwind CSS, Rails, PostgreSQL, React Testing Library, and RSpec.
           </p>
           <div className="btn">
-            <button className="group text-white text-xl w-fit px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-gradient-to-r from-slate-500 to-slate-900 cursor-pointer">
-              Porfolio{" "}
-              <span className="ml-2 group-hover:rotate-90 duration-200 group-hover:text-black">
-                <RxDoubleArrowRight size={25} />
-              </span>
-            </button>
+            <Link to="portfolio" smooth duration={500}>
+              {" "}
+              <button className="group text-white text-xl w-fit px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-gradient-to-r from-slate-500 to-slate-900 cursor-pointer">
+                Porfolio{" "}
+                <span className="ml-2 group-hover:rotate-90 duration-200 group-hover:text-black">
+                  <RxDoubleArrowRight size={25} />
+                </span>
+              </button>
+            </Link>
           </div>
         </section>
         {!showNav && (
-          <div className="hero-image">
-            <img
-              className="rounded-2xl mx-auto border-2 border-slate-300 hover:drop-shadow-ds hover:cursor-pointer duration-200"
-              src={heroImage}
-              alt="Eric McKee"
-            />
-          </div>
+          <Link to="about" smooth duration={500}>
+            {" "}
+            <div className="hero-image">
+              <img
+                className="rounded-2xl mx-auto border-2 border-slate-300 hover:shadow-lg hover:shadow-gray-500 hover:cursor-pointer duration-200"
+                src={heroImage}
+                alt="Eric McKee"
+              />
+            </div>
+          </Link>
         )}
       </div>
     </section>
