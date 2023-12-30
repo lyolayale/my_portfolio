@@ -5,6 +5,7 @@ import SocialMedia from "./components/SocialMedia";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Experience from "./components/Experience";
+import ContactForm from "./components/ContactForm";
 
 export default function App() {
   const [showNav, setShowNav] = useState(false);
@@ -19,6 +20,7 @@ export default function App() {
       <About />
       <Portfolio />
       <Experience />
+      <ContactForm />
       <SocialMedia />
     </div>
   );

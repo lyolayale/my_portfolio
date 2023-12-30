@@ -1,4 +1,5 @@
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 export default function Navbar({ showNav, onShowNav }) {
   const navLinks = [
@@ -11,22 +12,35 @@ export default function Navbar({ showNav, onShowNav }) {
   return (
     <nav className="flex justify-between items-center w-full h-20 p-4 text-white bg-black fixed">
       <section>
-        <h1 className="text-5xl font-signature ml-2 cursor-pointer hover:drop-shadow-ds duration-200 hover:border-b-2">
-          Eric
-        </h1>
+        <Link to="about" smooth duration={500}>
+          {" "}
+          <h1 className="text-5xl font-signature ml-2 cursor-pointer hover:drop-shadow-ds duration-200 hover:border-b-2">
+            Eric
+          </h1>
+        </Link>
       </section>
-      <FaBars
-        onClick={() => onShowNav()}
-        className="md:hidden cursor-pointer mr-4 text-gray-500 z-10 hover:scale-110 duration-100"
-        size={30}
-      />
+      {!showNav ? (
+        <FaBars
+          onClick={() => onShowNav()}
+          className="md:hidden cursor-pointer mr-4 text-gray-500 z-10 hover:scale-110 duration-100"
+          size={30}
+        />
+      ) : (
+        <FaTimes
+          onClick={() => onShowNav()}
+          className="md:hidden cursor-pointer mr-4 text-gray-500 z-10 hover:scale-110 duration-100"
+          size={30}
+        />
+      )}
       <ul className="hidden md:flex list-none justify-center items-center">
         {navLinks.map(({ link, id }) => (
           <li
             key={id}
             className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-110 duration-200"
           >
-            {link}
+            <Link to={link} smooth duration={500}>
+              {link}
+            </Link>
           </li>
         ))}
       </ul>
@@ -37,7 +51,14 @@ export default function Navbar({ showNav, onShowNav }) {
               key={id}
               className="px-4 cursor-pointer capitalize py-6 text-4xl"
             >
-              {link}
+              <Link
+                onClick={() => onShowNav(prev => !prev)}
+                to={link}
+                smooth
+                duration={500}
+              >
+                {link}
+              </Link>
             </li>
           ))}
         </ul>

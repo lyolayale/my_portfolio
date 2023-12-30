@@ -62,7 +62,7 @@ export default function Experience() {
   return (
     <section
       name="experience"
-      className="bg-gradient-to-b from-gray-800 to-black w-full h-screen-110"
+      className="pt-80 bg-gradient-to-b from-gray-800 to-black w-full h-screen-110"
     >
       <div className="wrapper max-w-screen-lg mx-auto flex flex-col items-start justify-center w-full h-full text-white p-4">
         <section className="text">
@@ -76,11 +76,8 @@ export default function Experience() {
           {techStack.map(({ id, src, title, style }) => (
             <div
               key={id}
-              className={
-                "hover:shadow-md hover:scale-105 duration-500 py-2 rounded-lg" +
-                " " +
-                style
-              }
+              className={`hover:shadow-md hover:scale-105 duration-500 py-2 rounded-lg
+                ${style}`}
             >
               <img className="w-20 mx-auto" src={src} alt="Technology" />
               <p className="mt-4">{title}</p>
