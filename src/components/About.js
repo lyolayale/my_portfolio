@@ -11,21 +11,23 @@ export default function About() {
           </p>
         </section>
         <p className="text-xl mt-20">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem illo
-          ipsam quo fuga et ea consectetur maxime amet obcaecati nam deleniti
-          suscipit beatae, optio distinctio mollitia asperiores quos culpa
-          nobis! Eius quod asperiores harum nostrum non reiciendis delectus
-          alias culpa reprehenderit eaque consequatur quos dolorem, porro
-          consectetur sed. Blanditiis, consequatur?
+          Hello! I'm Eric McKee, a passionate and driven web developer. What
+          drives and moves me is creating visually awesome and logically sound
+          applications and user friendly web sites. I have extensive experience
+          in web development technologies such as JavaScript, HTML, CSS, React,
+          Ruby, Rails, and PostgreSQL. And, I also practice pair programming,
+          mob programming, agile methodologies, and follow best practices in
+          regards to version control workflow.
         </p>
         <br />
         <p className="text-xl">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, ab
-          voluptatibus impedit expedita illo harum necessitatibus vitae! Magni,
-          eos voluptate? Tenetur unde molestias dolorum totam a iste placeat
-          enim quidem quibusdam nulla dolorem eum non deleniti quo suscipit rem
-          repellat sunt, quia adipisci, perferendis possimus delectus sequi
-          saepe recusandae? Suscipit?
+          A cool fact about me ... being a developer is not only my career, but
+          it's my passion and my hobby! So, my idea of "relaxing" is checking
+          out a new technology to play with or, doing some pair programming, or
+          just playing around and creating a new and interesting project.
+          Sometimes, I just enjoy doing some freestyle programming and reviewing
+          some data structures and algorithms. Another words, I love just being
+          on the computer and doing something.
         </p>
       </div>
     </section>
