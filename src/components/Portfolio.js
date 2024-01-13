@@ -10,32 +10,38 @@ export default function Portfolio() {
     {
       id: crypto.randomUUID(),
       src: airBnb,
-      link: "https://lyolayale.github.io/mini-airbnb-clone/",
+      demo: "https://lyolayale.github.io/mini-airbnb-clone/",
+      code: "https://github.com/lyolayale/mini-airbnb-clone",
     },
     {
       id: crypto.randomUUID(),
       src: githubGallery,
-      link: "https://lyolayale.github.io/github-repo-gallery/",
+      demo: "https://lyolayale.github.io/github-repo-gallery/",
+      code: "https://github.com/lyolayale/github-repo-gallery",
     },
     {
       id: crypto.randomUUID(),
       src: guessWord,
-      link: "https://lyolayale.github.io/guess-the-word/",
+      demo: "https://lyolayale.github.io/guess-the-word/",
+      code: "https://github.com/lyolayale/guess-the-word",
     },
     {
       id: crypto.randomUUID(),
       src: meme,
-      link: "https://lyolayale.github.io/meme-generator/",
+      demo: "https://lyolayale.github.io/meme-generator/",
+      code: "https://github.com/lyolayale/meme-generator",
     },
     {
       id: crypto.randomUUID(),
       src: noteCard,
-      link: "https://lyolayale.github.io/note_card/",
+      demo: "https://lyolayale.github.io/note_card/",
+      code: "https://github.com/lyolayale/note_card",
     },
     {
       id: crypto.randomUUID(),
       src: tenzie,
-      link: "https://lyolayale.github.io/tenzie/",
+      demo: "https://lyolayale.github.io/tenzie/",
+      code: "https://github.com/lyolayale/tenzie",
     },
   ];
   return (
@@ -54,12 +60,12 @@ export default function Portfolio() {
         </div>
 
         <article className="card grid sm:grid-cols-2 md:grid-cols-3 gap-12 px-12 sm:px-0">
-          {portfolio.map(({ id, src, link }) => (
+          {portfolio.map(({ id, src, demo, code }) => (
             <div
               key={id}
               className="rounded-lg hover:shadow-md hover:shadow-gray-500 hover:scale-105 duration-200"
             >
-              <a href={link} target="_blank" rel="noreferrer">
+              <a href={demo} target="_blank" rel="noreferrer">
                 <img
                   src={src}
                   alt={src}
@@ -69,15 +75,20 @@ export default function Portfolio() {
               <div className="flex justify-center items-center gap-20 py-4 text-lg">
                 <a
                   className="hover:scale-110 hover:text-gray-500 duration-200 hover:font-bold hover:underline"
-                  href={link}
+                  href={demo}
                   target="_blank"
                   rel="noreferrer"
                 >
                   Demo
                 </a>
-                <button className="hover:scale-110 hover:text-gray-500 duration-200 hover:font-bold hover:underline">
+                <a
+                  className="hover:scale-110 hover:text-gray-500 duration-200 hover:font-bold hover:underline"
+                  href={code}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Code
-                </button>
+                </a>
               </div>
             </div>
           ))}
