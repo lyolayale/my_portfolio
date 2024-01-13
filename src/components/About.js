@@ -27,7 +27,7 @@ export default function About() {
           just playing around and creating a new and interesting project.
           Sometimes, I just enjoy doing some freestyle programming and reviewing
           some data structures and algorithms. Another words, I love just being
-          on the computer and doing something.
+          on the computer and doing something!
         </p>
       </div>
     </section>
