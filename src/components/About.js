@@ -10,7 +10,7 @@ export default function About() {
             About
           </p>
         </section>
-        <p className="text-xl mt-20">
+        <p className="text-xl mt-20 leading-9">
           Hello! I'm Eric McKee, a passionate and driven web developer. What
           drives and moves me is creating visually awesome and logically sound
           applications and user friendly web sites. I have extensive experience
@@ -20,7 +20,7 @@ export default function About() {
           regards to version control workflow.
         </p>
         <br />
-        <p className="text-xl">
+        <p className="text-xl leading-9">
           A cool fact about me ... being a developer is not only my career, but
           it's my passion and my hobby! So, my idea of "relaxing" is checking
           out a new technology to play with or, doing some pair programming, or
