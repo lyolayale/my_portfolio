@@ -14,8 +14,8 @@ export default function Navbar({ showNav, onShowNav }) {
       <section>
         <Link to="about" smooth duration={500}>
           {" "}
-          <h1 className="text-5xl font-signature ml-2 cursor-pointer hover:drop-shadow-ds duration-200 hover:border-b-2">
-            Eric
+          <h1 className="text-5xl font-bold ml-2 cursor-pointer hover:drop-shadow-ds duration-200 hover:border-b-2">
+            EM
           </h1>
         </Link>
       </section>

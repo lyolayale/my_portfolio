@@ -36,7 +36,7 @@ export default function Home({ showNav }) {
             {" "}
             <div className="hero-image">
               <img
-                className="rounded-2xl mx-auto border-2 border-slate-300 hover:shadow-lg hover:shadow-gray-500 hover:cursor-pointer duration-200"
+                className="rounded-2xl mx-auto border-2 border-slate-300 hover:shadow-lg hover:shadow-gray-500 hover:cursor-pointer hover:scale-105 duration-200"
                 src={heroImage}
                 alt="Eric McKee"
               />
