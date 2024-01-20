@@ -61,13 +61,13 @@ export default function Experience() {
   ];
   return (
     <section
-      name="experience"
+      name="skills"
       className="pt-52 bg-gradient-to-b from-gray-800 to-black w-full h-screen-110"
     >
       <div className="wrapper max-w-screen-lg mx-auto flex flex-col items-start justify-center w-full h-full text-white p-4">
         <section className="text">
           <p className="text-5xl font-bold border-b-4 border-gray-500 p-2 inline">
-            Experience
+            Technologies
           </p>
           <p className="text-xl py-10">Technologies that I work with daily.</p>
         </section>

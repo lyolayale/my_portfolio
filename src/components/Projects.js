@@ -46,13 +46,13 @@ export default function Portfolio() {
   ];
   return (
     <section
-      name="portfolio"
+      name="projects"
       className="pt-80 sm:pt-0 wrapper bg-gradient-to-b from-black to-gray-800 w-full text-white md:h-screen"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-10">
           <p className="text-5xl font-bold inline border-b-4 border-gray-500 p-2">
-            My Portfolio
+            Projects
           </p>
           <p className="py-10 text-xl">
             Feel free to check out some of my work right here!

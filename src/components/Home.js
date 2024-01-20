@@ -23,7 +23,7 @@ export default function Home({ showNav }) {
             <Link to="portfolio" smooth duration={500}>
               {" "}
               <button className="group text-white text-xl w-fit px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-gradient-to-r from-slate-500 to-slate-900 cursor-pointer">
-                Porfolio{" "}
+                Projects{" "}
                 <span className="ml-2 group-hover:rotate-90 duration-200 group-hover:text-black">
                   <RxDoubleArrowRight size={25} />
                 </span>
@@ -36,7 +36,7 @@ export default function Home({ showNav }) {
             {" "}
             <div className="hero-image">
               <img
-                className="rounded-2xl mx-auto border-2 border-slate-300 hover:shadow-lg hover:shadow-gray-500 hover:cursor-pointer hover:scale-105 duration-200"
+                className="rounded-2xl mx-auto border-2 border-slate-300 hover:drop-shadow-ds hover:cursor-pointer hover:scale-105 duration-1000"
                 src={heroImage}
                 alt="Eric McKee"
               />

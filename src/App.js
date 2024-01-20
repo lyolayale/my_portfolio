@@ -3,8 +3,8 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import SocialMedia from "./components/SocialMedia";
 import About from "./components/About";
-import Portfolio from "./components/Portfolio";
-import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
 import ContactForm from "./components/ContactForm";
 
 export default function App() {
@@ -18,8 +18,8 @@ export default function App() {
       <Navbar showNav={showNav} onShowNav={handleShowNav} />
       <Home showNav={showNav} />
       <About />
-      <Portfolio />
-      <Experience />
+      <Projects />
+      <Skills />
       <ContactForm />
       <SocialMedia />
     </div>
