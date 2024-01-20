@@ -10,7 +10,7 @@ export default function ContactForm() {
             Contact
           </p>
           <p className="text-xl py-10">
-            Interest in working with me? Submit the form below.
+            Interested in hiring me? Submit the form below.
           </p>
         </div>
 

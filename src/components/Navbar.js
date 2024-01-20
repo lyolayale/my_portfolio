@@ -5,8 +5,8 @@ export default function Navbar({ showNav, onShowNav }) {
   const navLinks = [
     { id: crypto.randomUUID(), link: "home" },
     { id: crypto.randomUUID(), link: "about" },
-    { id: crypto.randomUUID(), link: "portfolio" },
-    { id: crypto.randomUUID(), link: "experience" },
+    { id: crypto.randomUUID(), link: "projects" },
+    { id: crypto.randomUUID(), link: "skills" },
     { id: crypto.randomUUID(), link: "contact" },
   ];
   return (

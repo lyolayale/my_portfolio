@@ -2,15 +2,15 @@ export default function About() {
   return (
     <section
       name="about"
-      className="w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white px-4"
+      className="pt-80 md:pt-0 w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white px-4"
     >
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
+      <div className="group max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full hover:drop-shadow-ds duration-1000">
         <section className="pb-10">
           <p className="text-5xl font-bold inline border-b-4 border-gray-500 p-2">
             About
           </p>
         </section>
-        <p className="text-xl mt-20 leading-9">
+        <p className="text-xl mt-20 leading-9 group-hover:scale-105 duration-1000">
           Hello! I'm Eric McKee, a passionate and driven web developer. What
           drives and moves me is creating visually awesome and logically sound
           applications and user friendly web sites. I have extensive experience
@@ -20,7 +20,7 @@ export default function About() {
           regards to version control workflow.
         </p>
         <br />
-        <p className="text-xl leading-9">
+        <p className="text-xl leading-9 group-hover:scale-105 duration-1000">
           A cool fact about me ... being a developer is not only my career, but
           it's my passion and my hobby! So, my idea of "relaxing" is checking
           out a new technology to play with or, doing some pair programming, or
