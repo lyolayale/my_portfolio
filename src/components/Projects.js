@@ -86,7 +86,7 @@ export default function Portfolio() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Demo
+                  Site
                 </a>
                 <a
                   className="hover:scale-110 hover:text-gray-500 duration-200 hover:font-bold hover:underline"
