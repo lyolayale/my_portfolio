@@ -20,7 +20,7 @@ export default function Home({ showNav }) {
             Tailwind CSS, Rails, PostgreSQL, React Testing Library, and RSpec.
           </p>
           <div className="btn">
-            <Link to="portfolio" smooth duration={500}>
+            <Link to="projects" smooth duration={500}>
               {" "}
               <button className="group text-white text-xl w-fit px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-gradient-to-r from-slate-500 to-slate-900 cursor-pointer">
                 Projects{" "}
