@@ -53,7 +53,7 @@ export default function Portfolio() {
   return (
     <section
       name="projects"
-      className="pt-80 sm:pt-0 wrapper bg-gradient-to-b from-black to-gray-800 w-full text-white md:h-screen"
+      className="pt-60 sm:pt-40 wrapper bg-gradient-to-b from-black to-gray-800 w-full text-white md:h-screen"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-10">
