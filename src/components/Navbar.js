@@ -10,7 +10,7 @@ export default function Navbar({ showNav, onShowNav }) {
     { id: crypto.randomUUID(), link: "contact" },
   ];
   return (
-    <nav className="flex justify-between items-center w-full h-20 p-4 text-white bg-black fixed">
+    <nav className="flex justify-between items-center w-full h-20 p-4 text-white bg-black fixed z-10">
       <section>
         <Link to="about" smooth duration={500}>
           {" "}

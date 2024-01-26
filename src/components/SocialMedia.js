@@ -52,7 +52,7 @@ export default function SocialMedia() {
           <li
             key={id}
             className={
-              "hover:text-black flex justify-between items-center w-40 h-1/4 px-4 my-16 bg-slate-700 text-white text-xl opacity-90 hover:rounded-r-lg hover:shadow-2xl hover:shadow-white ml-[-100px] hover:ml-[-10px] duration-300" +
+              "hover:text-black flex justify-between items-center w-40 h-1/4 px-4 my-16 text-white text-xl opacity-90 hover:rounded-r-lg hover:shadow-2xl hover:shadow-white ml-[-100px] hover:ml-[-10px] hover:bg-slate-700 duration-300" +
               " " +
               style
             }
