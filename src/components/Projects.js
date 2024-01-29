@@ -1,8 +1,8 @@
 import splitBill from "../assets/portfolio/split-bill.png";
-import githubGallery from "../assets/portfolio/github-gallery - Edited.png";
+import shotcallers from "../assets/portfolio/shotcallers.png";
 import guessWord from "../assets/portfolio/guess-the-word-game - Edited.png";
 import meme from "../assets/portfolio/meme.png";
-import noteCard from "../assets/portfolio/note-card.png";
+import apartment from "../assets/portfolio/apartment-app.png";
 import tenzie from "../assets/portfolio/tenzie.png";
 
 export default function Portfolio() {
@@ -16,10 +16,10 @@ export default function Portfolio() {
     },
     {
       id: crypto.randomUUID(),
-      src: githubGallery,
-      demo: "https://lyolayale.github.io/github-repo-gallery/",
-      code: "https://github.com/lyolayale/github-repo-gallery",
-      title: "GitHub Gallery",
+      src: shotcallers,
+      demo: " https://shotcaller.onrender.com/",
+      code: "https://github.com/Shot-Callers/shotcaller-app-frontend",
+      title: "Shotcallers App",
     },
     {
       id: crypto.randomUUID(),
@@ -37,10 +37,10 @@ export default function Portfolio() {
     },
     {
       id: crypto.randomUUID(),
-      src: noteCard,
-      demo: "https://lyolayale.github.io/note_card/",
-      code: "https://github.com/lyolayale/note_card",
-      title: "Note Cards",
+      src: apartment,
+      demo: "https://lyolayale.github.io/apartment-app-frontend/",
+      code: "https://github.com/lyolayale/apartment-app-frontend",
+      title: "Apartment Finder",
     },
     {
       id: crypto.randomUUID(),
