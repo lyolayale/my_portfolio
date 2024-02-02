@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my_portfolio/static/css/main.857c9674.css",
-    "main.js": "/my_portfolio/static/js/main.e9457e30.js",
+    "main.css": "/my_portfolio/static/css/main.dba9bca5.css",
+    "main.js": "/my_portfolio/static/js/main.f6e618e6.js",
     "static/media/meme.png": "/my_portfolio/static/media/meme.80de69badfcc7bdbffe5.png",
     "static/media/tenzie.png": "/my_portfolio/static/media/tenzie.503e510bb05652fb44e4.png",
     "static/media/guess-the-word-game - Edited.png": "/my_portfolio/static/media/guess-the-word-game - Edited.73e1129bdf78a079915b.png",
@@ -15,11 +15,11 @@
     "static/media/javascript.png": "/my_portfolio/static/media/javascript.2840e272f3582fbab1c1.png",
     "static/media/ruby.png": "/my_portfolio/static/media/ruby.aca71e852d4bb359779d.png",
     "index.html": "/my_portfolio/index.html",
-    "main.857c9674.css.map": "/my_portfolio/static/css/main.857c9674.css.map",
-    "main.e9457e30.js.map": "/my_portfolio/static/js/main.e9457e30.js.map"
+    "main.dba9bca5.css.map": "/my_portfolio/static/css/main.dba9bca5.css.map",
+    "main.f6e618e6.js.map": "/my_portfolio/static/js/main.f6e618e6.js.map"
   },
   "entrypoints": [
-    "static/css/main.857c9674.css",
-    "static/js/main.e9457e30.js"
+    "static/css/main.dba9bca5.css",
+    "static/js/main.f6e618e6.js"
   ]
 }
