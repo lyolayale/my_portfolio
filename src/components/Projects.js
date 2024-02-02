@@ -69,7 +69,7 @@ export default function Portfolio() {
           {portfolio.map(({ id, src, demo, code, title }) => (
             <div
               key={id}
-              className="group rounded-lg hover:shadow-md hover:shadow-gray-500 hover:scale-105 duration-200"
+              className="pb-5 border border-1 border-gray-500 rounded-lg hover:shadow-md hover:shadow-gray-500 hover:scale-105 duration-200"
             >
               {/* <h3 className="text-xl text-slate-50 mb-3 p-1">{title}</h3> */}
               <a href={demo} target="_blank" rel="noreferrer">
@@ -97,7 +97,7 @@ export default function Portfolio() {
                   Code
                 </a>
               </div>
-              <h3 className="hidden text-center text-xl text-slate-50 font-bold mb-3 p-1 group-hover:block hover:scale-110 hover:text-gray-500 duration-200 hover:font-bold hover:underline">
+              <h3 className="text-center text-xl text-slate-50 p-1 group-hover:block hover:scale-110 hover:text-gray-500 duration-200 hover:font-bold hover:underline">
                 <a href={demo} target="_blank" rel="noreferrer">
                   {title}
                 </a>
