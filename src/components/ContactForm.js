@@ -45,7 +45,7 @@ export default function ContactForm() {
               minLength={10}
               autoComplete="off"
             ></textarea>
-            <button className="tracking-widest mx-auto w-1/2 place-content-center text-white text-xl px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-gradient-to-r from-slate-500 to-slate-900 hover:scale-105 hover:border hover:border-1 duration-200">
+            <button className="tracking-widest mx-auto w-1/2 place-content-center text-white text-xl px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-black border border-1 border-slate-50 hover:scale-105  duration-200">
               Hire Me
             </button>
           </form>

@@ -6,19 +6,21 @@ export default function Navbar({ showNav, onShowNav }) {
     { id: crypto.randomUUID(), link: "home" },
     { id: crypto.randomUUID(), link: "about" },
     { id: crypto.randomUUID(), link: "projects" },
-    { id: crypto.randomUUID(), link: "skills" },
+    { id: crypto.randomUUID(), link: "tech stack" },
     { id: crypto.randomUUID(), link: "contact" },
   ];
   return (
     <nav className="flex justify-between items-center w-full h-20 p-4 text-white bg-black fixed z-10">
-      <section>
-        <Link to="about" smooth duration={500}>
-          {" "}
-          <h1 className="text-5xl font-bold ml-2 cursor-pointer hover:drop-shadow-ds duration-200 hover:border-b-2">
-            EM
-          </h1>
-        </Link>
-      </section>
+      <Link
+        to="about"
+        smooth
+        className="cursor-pointer text-gray-500 hover:text-slate-50 duration-200"
+      >
+        {" "}
+        <h1 className="hidden sm:block text-5xl font-bold ml-2">Eric McKee</h1>
+        <h1 className="sm:hidden text-5xl font-bold ml-2">EM</h1>
+      </Link>
+
       {!showNav ? (
         <FaBars
           onClick={() => onShowNav()}
@@ -36,7 +38,7 @@ export default function Navbar({ showNav, onShowNav }) {
         {navLinks.map(({ link, id }) => (
           <li
             key={id}
-            className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-110 duration-200"
+            className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-110 hover:text-slate-50 duration-200"
           >
             <Link to={link} smooth duration={500}>
               {link}
