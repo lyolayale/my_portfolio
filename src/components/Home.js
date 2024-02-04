@@ -14,17 +14,15 @@ export default function Home({ showNav }) {
             Full Stack Web Developer
           </h2>
           <p className="text-gray-500 py-5 max-w-md text-xl">
-            I specialize in building and designing web applications with React
-            and Rails. Currently, I'm enjoying my time hanging out with family
-            and creating full stack projects using technologies like: React,
-            Tailwind CSS, Rails, PostgreSQL, React Testing Library, and RSpec.
+            Full stack Rails and React developer. <br /> Utilizing Test Driven
+            Development (TDD) <br /> and Agile Methodology
           </p>
           <div className="btn">
             <Link to="projects" smooth duration={500}>
               {" "}
-              <button className="group text-white text-xl w-fit px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-gradient-to-r from-slate-500 to-slate-900 cursor-pointer">
+              <button className="group text-white text-xl w-fit px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-black cursor-pointer border border-1 border-slate-50">
                 Projects{" "}
-                <span className="ml-2 group-hover:rotate-90 duration-200 group-hover:text-black">
+                <span className="ml-2 group-hover:rotate-90 duration-200">
                   <RxDoubleArrowRight size={25} />
                 </span>
               </button>

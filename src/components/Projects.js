@@ -53,7 +53,7 @@ export default function Portfolio() {
   return (
     <section
       name="projects"
-      className="pt-60 sm:pt-40 wrapper bg-gradient-to-b from-black to-gray-800 w-full text-white md:h-screen"
+      className="pt-48 sm:pt-40 wrapper bg-gradient-to-b from-black to-gray-800 w-full text-white md:h-screen"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-10">
@@ -79,6 +79,9 @@ export default function Portfolio() {
                   className="rounded-t-md cursor-pointer"
                 />
               </a>
+              <h3 className="mt-5 text-center text-xl text-white p-1 uppercase underline-offset-4">
+                {title}
+              </h3>
               <div className="flex justify-center items-center gap-20 py-4 text-lg">
                 <a
                   className="hover:scale-110 hover:text-gray-500 duration-200 hover:font-bold hover:underline"
@@ -97,11 +100,6 @@ export default function Portfolio() {
                   Code
                 </a>
               </div>
-              <h3 className="text-center text-xl text-slate-50 p-1 group-hover:block hover:scale-110 hover:text-gray-500 duration-200 hover:font-bold hover:underline">
-                <a href={demo} target="_blank" rel="noreferrer">
-                  {title}
-                </a>
-              </h3>
             </div>
           ))}
         </article>
