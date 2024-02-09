@@ -30,19 +30,7 @@ export default function SocialMedia() {
           <span className="text-white">Email</span> <HiOutlineMail size={30} />
         </>
       ),
-      href: "mailto:foo@gmail.com",
-    },
-    {
-      id: crypto.randomUUID(),
-      child: (
-        <>
-          <span className="text-white">Resume</span>{" "}
-          <BsFillPersonLinesFill size={30} />
-        </>
-      ),
-      href: "/resume.pdf",
-      style: "rounded-br-md",
-      download: true,
+      href: "mailto:lyolayale19@gmail.com",
     },
   ];
   return (
