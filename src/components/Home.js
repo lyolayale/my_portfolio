@@ -17,8 +17,6 @@ export default function Home({ showNav }) {
     } else {
       control.start("hidden");
     }
-
-    console.log(inView);
   }, [control, inView]);
 
   return (
