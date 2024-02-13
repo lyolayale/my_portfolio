@@ -1,5 +1,6 @@
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 export default function Navbar({ showNav, onShowNav }) {
   const navLinks = [
@@ -17,7 +18,14 @@ export default function Navbar({ showNav, onShowNav }) {
         className="cursor-pointer text-gray-500 hover:text-slate-50 duration-200"
       >
         {" "}
-        <h1 className="hidden sm:block text-5xl font-bold ml-2">Eric McKee</h1>
+        <motion.h1
+          initial={{ y: -250 }}
+          animate={{ y: 0 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 25 }}
+          className="hidden sm:block text-5xl font-bold ml-2"
+        >
+          Eric McKee
+        </motion.h1>
         <h1 className="sm:hidden text-5xl font-bold ml-2">EM</h1>
       </Link>
 
