@@ -1,10 +1,36 @@
 import heroImage from "../assets/me.png";
 import { RxDoubleArrowRight } from "react-icons/rx";
 import { Link } from "react-scroll";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 export default function Home({ showNav }) {
+  // const isInView = useInView(ref, { once: true });
+  // const mainControls = useAnimation();
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+
+    console.log(inView);
+  }, [control, inView]);
+
   return (
-    <section
+    <motion.section
+      ref={ref}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      }}
+      initial="hidden"
+      animate={control}
+      transition={{ delay: 0.5, duration: 1.5 }}
       name="home"
       className="h-screen w-full bg-gradient-to-b from-black via-black to-gray-800"
     >
@@ -20,28 +46,46 @@ export default function Home({ showNav }) {
           <div className="btn">
             <Link to="projects" smooth duration={500}>
               {" "}
-              <button className="group text-white text-xl w-fit px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-black cursor-pointer border border-1 border-slate-50">
+              <motion.button
+                variants={{
+                  hidden: { x: "-100vw" },
+                  visible: { x: 0 },
+                }}
+                initial="hidden"
+                animate={control}
+                transition={{ delay: 1, duration: 1.5 }}
+                className="group text-white text-xl w-fit px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-black cursor-pointer border border-1 border-slate-50"
+              >
                 Projects{" "}
                 <span className="ml-2 group-hover:rotate-90 duration-200">
                   <RxDoubleArrowRight size={25} />
                 </span>
-              </button>
+              </motion.button>
             </Link>
           </div>
         </section>
         {!showNav && (
           <Link to="about" smooth duration={500}>
             {" "}
-            <div className="hero-image">
+            <motion.div
+              variants={{
+                hidden: { x: "100vw" },
+                visible: { x: 0 },
+              }}
+              initial="hidden"
+              animate={control}
+              transition={{ delay: 1, duration: 1.5 }}
+              className="hero-image"
+            >
               <img
                 className="rounded-2xl mx-auto border-2 border-slate-300 hover:drop-shadow-ds hover:cursor-pointer hover:scale-105 duration-1000"
                 src={heroImage}
                 alt="Eric McKee"
               />
-            </div>
+            </motion.div>
           </Link>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 }

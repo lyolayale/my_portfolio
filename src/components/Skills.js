@@ -83,6 +83,7 @@ export default function Experience() {
               <p className="mt-4">{title}</p>
             </div>
           ))}
+
           <div className="hidden sm:block shadow-md shadow-teal-500 py-2 rounded-lg">
             <img className="w-20 mx-auto" src={tailwind} alt="Technology" />
             <p className="mt-4">Tailwind CSS</p>
