@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import splitBill from "../assets/portfolio/split-bill.png";
 import shotcallers from "../assets/portfolio/shotcallers.png";
 import guessWord from "../assets/portfolio/guess-the-word-game - Edited.png";
@@ -6,6 +9,17 @@ import apartment from "../assets/portfolio/apartment-app.png";
 import tenzie from "../assets/portfolio/tenzie.png";
 
 export default function Portfolio() {
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+
   const portfolio = [
     {
       id: crypto.randomUUID(),
@@ -51,21 +65,47 @@ export default function Portfolio() {
     },
   ];
   return (
-    <section
+    <motion.section
+      ref={ref}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      }}
+      initial="hidden"
+      animate={control}
+      transition={{ delay: 0.5, duration: 1.5 }}
       name="projects"
       className="pt-48 sm:pt-40 wrapper bg-gradient-to-b from-black to-gray-800 w-full text-white md:h-screen"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <div className="pb-10">
+        <motion.div
+          variants={{
+            hidden: { x: "-100vw" },
+            visible: { x: 0 },
+          }}
+          initial="hidden"
+          animate={control}
+          transition={{ delay: 0.75, duration: 1.5 }}
+          className="pb-10"
+        >
           <p className="text-5xl font-bold inline border-b-4 border-gray-500 p-2">
             Projects
           </p>
           <p className="py-10 text-xl">
             Feel free to check out some of my work right here!
           </p>
-        </div>
+        </motion.div>
 
-        <article className="card grid sm:grid-cols-2 md:grid-cols-3 gap-12 px-12 sm:px-0">
+        <motion.article
+          variants={{
+            hidden: { scale: 0 },
+            visible: { scale: 1 },
+          }}
+          initial="hidden"
+          animate={control}
+          transition={{ delay: 1, duration: 3 }}
+          className="card grid sm:grid-cols-2 md:grid-cols-3 gap-12 px-12 sm:px-0"
+        >
           {portfolio.map(({ id, src, demo, code, title }) => (
             <div
               key={id}
@@ -102,8 +142,8 @@ export default function Portfolio() {
               </div>
             </div>
           ))}
-        </article>
+        </motion.article>
       </div>
-    </section>
+    </motion.section>
   );
 }
