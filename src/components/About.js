@@ -18,13 +18,6 @@ export default function About() {
   return (
     <motion.section
       ref={ref}
-      variants={{
-        hidden: { opacity: 0 },
-        visible: { opacity: 1 },
-      }}
-      initial="hidden"
-      animate={control}
-      transition={{ delay: 0.5, duration: 2 }}
       name="about"
       className="pt-20 md:pt-0 w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white px-4"
     >
@@ -62,19 +55,12 @@ export default function About() {
           setting.
         </motion.p>
         {!show && (
-          <motion.button
-            variants={{
-              hidden: { x: "-100vw" },
-              visible: { x: 0 },
-            }}
-            initial="hidden"
-            animate={control}
-            transition={{ delay: 1.5, duration: 1.5 }}
+          <button
             onClick={() => setShow(prev => !prev)}
             className="mt-12 text-white text-xl w-fit px-6 py-3 my-2 flex items-center gap-2 rounded-md bg-black cursor-pointer border border-1 border-slate-50 hover:scale-105 duration-200"
           >
             Show More
-          </motion.button>
+          </button>
         )}
         <br />
         {show && (
