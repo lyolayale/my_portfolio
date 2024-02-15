@@ -6,8 +6,6 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 export default function Home({ showNav }) {
-  // const isInView = useInView(ref, { once: true });
-  // const mainControls = useAnimation();
   const control = useAnimation();
   const [ref, inView] = useInView();
 
