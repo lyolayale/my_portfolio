@@ -96,18 +96,16 @@ export default function Portfolio() {
           </p>
         </motion.div>
 
-        <motion.article
-          variants={{
-            hidden: { scale: 0 },
-            visible: { scale: 1 },
-          }}
-          initial="hidden"
-          animate={control}
-          transition={{ delay: 1, duration: 3 }}
-          className="card grid sm:grid-cols-2 md:grid-cols-3 gap-12 px-12 sm:px-0"
-        >
+        <article className="card grid sm:grid-cols-2 md:grid-cols-3 gap-12 px-12 sm:px-0">
           {portfolio.map(({ id, src, demo, code, title }) => (
-            <div
+            <motion.div
+              variants={{
+                hidden: { scale: 0 },
+                visible: { scale: 1 },
+              }}
+              initial="hidden"
+              animate={control}
+              transition={{ delay: 1, duration: 3 }}
               key={id}
               className="pb-5 border border-1 border-gray-500 rounded-lg hover:shadow-md hover:shadow-gray-500 hover:scale-105 duration-200"
             >
@@ -140,9 +138,9 @@ export default function Portfolio() {
                   Code
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </motion.article>
+        </article>
       </div>
     </motion.section>
   );

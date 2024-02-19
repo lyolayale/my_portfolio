@@ -1,6 +1,9 @@
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import css from "../assets/css.png";
 import github from "../assets/github.png";
-import html from "../assets/html.png";
+import postman from "../assets/postman.png";
 import javascript from "../assets/javascript.png";
 import postgresql from "../assets/postgresql.png";
 import react from "../assets/react.png";
@@ -9,12 +12,23 @@ import ruby from "../assets/ruby.png";
 import tailwind from "../assets/tailwind.png";
 
 export default function Experience() {
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+
   const techStack = [
     {
       id: crypto.randomUUID(),
-      src: html,
-      title: "HTML",
-      style: "shadow-red-500",
+      src: postman,
+      title: "Postman",
+      style: "shadow-orange-500",
     },
     {
       id: crypto.randomUUID(),
@@ -61,6 +75,7 @@ export default function Experience() {
   ];
   return (
     <section
+      ref={ref}
       name="tech stack"
       className="pt-52 bg-gradient-to-b from-gray-800 to-black w-full h-screen-110"
     >
@@ -74,20 +89,39 @@ export default function Experience() {
 
         <section className="image-container w-full grid grid-cols-2 sm:grid-cols-3 gap-10 text-center py-8 px-12 sm:px-0">
           {techStack.map(({ id, src, title, style }) => (
-            <div key={id} className={`py-2 rounded-lg shadow-md ${style}`}>
+            <motion.div
+              variants={{
+                hidden: { scale: 0 },
+                visible: { scale: 1 },
+              }}
+              initial="hidden"
+              animate={control}
+              transition={{ delay: 1, duration: 3 }}
+              key={id}
+              className={`py-2 rounded-lg shadow-md ${style}`}
+            >
               <img
                 className="w-[6.25rem] h-[6.25rem] object-cover mx-auto"
                 src={src}
                 alt="Technology"
               />
               <p className="mt-4">{title}</p>
-            </div>
+            </motion.div>
           ))}
 
-          <div className="hidden sm:block shadow-md shadow-teal-500 py-2 rounded-lg">
+          <motion.div
+            variants={{
+              hidden: { scale: 0 },
+              visible: { scale: 1 },
+            }}
+            initial="hidden"
+            animate={control}
+            transition={{ delay: 1, duration: 3 }}
+            className="hidden sm:block shadow-md shadow-teal-500 py-2 rounded-lg"
+          >
             <img className="w-20 mx-auto" src={tailwind} alt="Technology" />
             <p className="mt-4">Tailwind CSS</p>
-          </div>
+          </motion.div>
         </section>
       </div>
     </section>
