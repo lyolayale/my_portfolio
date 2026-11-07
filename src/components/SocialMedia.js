@@ -1,57 +1,42 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
+const socialMediaLinks = [
+  {
+    label: "LinkedIn",
+    icon: <FaLinkedin size={18} />,
+    href: "https://www.linkedin.com/in/eric-mckee-36021a1a5/",
+  },
+  {
+    label: "GitHub",
+    icon: <FaGithub size={18} />,
+    href: "https://github.com/lyolayale",
+  },
+  {
+    label: "Email",
+    icon: <HiOutlineMail size={18} />,
+    href: "mailto:lyolayale19@gmail.com",
+  },
+];
+
 export default function SocialMedia() {
-  const socialMediaLinks = [
-    {
-      id: crypto.randomUUID(),
-      child: (
-        <>
-          <span className="text-white">LinkedIn</span> <FaLinkedin size={30} />
-        </>
-      ),
-      href: "https://linkedin.com",
-      style: "rounded-tr-md",
-    },
-    {
-      id: crypto.randomUUID(),
-      child: (
-        <>
-          <span className="text-white">GitHub</span> <FaGithub size={30} />
-        </>
-      ),
-      href: "https://github.com/lyolayale",
-    },
-    {
-      id: crypto.randomUUID(),
-      child: (
-        <>
-          <span className="text-white">Email</span> <HiOutlineMail size={30} />
-        </>
-      ),
-      href: "mailto:lyolayale19@gmail.com",
-    },
-  ];
   return (
-    <section className="hidden lg:flex flex-col top-[35%] left-0 fixed">
-      <ul>
-        {socialMediaLinks.map(({ id, child, href, style, download }) => (
-          <li
-            key={id}
-            className={
-              "hover:text-black flex justify-between items-center w-40 h-1/4 px-4 my-16 text-white text-xl opacity-90 hover:rounded-r-lg hover:shadow-2xl hover:shadow-white ml-[-100px] hover:ml-[-10px] hover:bg-slate-700 duration-300" +
-              " " +
-              style
-            }
-          >
+    <section
+      className="fixed right-0 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-1 z-30 no-scrollbar"
+    >
+      <ul className="flex flex-col gap-1">
+        {socialMediaLinks.map(({ label, icon, href }, index) => (
+          <li key={label}>
             <a
-              className="flex justify-between items-center w-full py-4 bg-transparent"
               href={href}
-              download={download}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between w-12 h-12 rounded-l-full bg-slate-900/80 border border-white/10 backdrop-blur-md px-3 py-2 text-slate-300 hover:bg-brand-600 hover:text-white hover:shadow-glow transition-all duration-300 group"
             >
-              {child}
+              <span className="text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2">
+                {label}
+              </span>
+              {icon}
             </a>
           </li>
         ))}

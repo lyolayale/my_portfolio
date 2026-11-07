@@ -1,77 +1,130 @@
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
-export default function Navbar({ showNav, onShowNav }) {
-  const navLinks = [
-    { id: crypto.randomUUID(), link: "home" },
-    { id: crypto.randomUUID(), link: "about" },
-    { id: crypto.randomUUID(), link: "projects" },
-    { id: crypto.randomUUID(), link: "tech stack" },
-    { id: crypto.randomUUID(), link: "contact" },
-  ];
+const navLinks = [
+  { link: "home", label: "Home" },
+  { link: "about", label: "About" },
+  { link: "projects", label: "Projects" },
+  { link: "tech-stack", label: "Tech Stack" },
+  { link: "contact", label: "Contact" },
+];
+
+export default function Navbar({ activeSection, showNav, onShowNav }) {
+  useEffect(() => {
+    if (showNav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [showNav]);
+
   return (
-    <nav className="flex justify-between items-center w-full h-20 p-4 text-white bg-black fixed z-10">
-      <Link
-        to="about"
-        smooth
-        className="cursor-pointer text-gray-500 hover:text-slate-50 duration-200"
-      >
-        {" "}
-        <motion.h1
-          initial={{ y: -250 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 25 }}
-          className="hidden sm:block text-5xl font-bold ml-2"
+    <nav
+      className="fixed top-0 left-0 w-full z-40 border-b border-white/5 bg-slate-950/80 backdrop-blur-xl transition-colors duration-300"
+    >
+      <div className="container flex justify-between items-center h-16 px-4 md:px-8">
+        <Link
+          to="home"
+          smooth
+          duration={500}
+          className="cursor-pointer flex items-center gap-2"
         >
-          Eric McKee
-        </motion.h1>
-        <h1 className="sm:hidden text-5xl font-bold ml-2">EM</h1>
-      </Link>
-
-      {!showNav ? (
-        <FaBars
-          onClick={() => onShowNav()}
-          className="md:hidden cursor-pointer mr-4 text-gray-500 z-10 hover:scale-110 duration-100"
-          size={30}
-        />
-      ) : (
-        <FaTimes
-          onClick={() => onShowNav()}
-          className="md:hidden cursor-pointer mr-4 text-gray-500 z-10 hover:scale-110 duration-100"
-          size={30}
-        />
-      )}
-      <ul className="hidden md:flex list-none justify-center items-center">
-        {navLinks.map(({ link, id }) => (
-          <li
-            key={id}
-            className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-110 hover:text-slate-50 duration-200"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center shadow-glow"
           >
-            <Link to={link} smooth duration={500}>
-              {link}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      {showNav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
-          {navLinks.map(({ link, id }) => (
-            <li
-              key={id}
-              className="px-4 cursor-pointer capitalize py-6 text-4xl"
-            >
+            <span className="text-white font-bold text-xs">E</span>
+          </motion.div>
+          <span className="font-bold text-xl tracking-tight text-white sm:hidden">
+            EM
+          </span>
+          <span className="hidden sm:block text-xl font-bold tracking-tight gradient-text">
+            Eric McKee
+          </span>
+        </Link>
+
+        {!showNav ? (
+          <FaBars
+            onClick={() => onShowNav()}
+            className="md:hidden cursor-pointer text-slate-300 hover:text-white transition-colors"
+            size={24}
+          />
+        ) : (
+          <FaTimes
+            onClick={() => onShowNav()}
+            className="md:hidden cursor-pointer text-slate-300 hover:text-white transition-colors"
+            size={24}
+          />
+        )}
+
+        <ul className="hidden md:flex items-center gap-8">
+          {navLinks.map(({ link, label }) => (
+            <li key={link}>
               <Link
-                onClick={() => onShowNav(prev => !prev)}
+                activeClass="active"
                 to={link}
                 smooth
                 duration={500}
+                spy={true}
+                offset={-80}
+                className={({ isActive }) =>
+                  `nav-link ${
+                    activeSection === link || isActive ? "active" : ""
+                  }`
+                }
               >
-                {link}
+                {label}
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              href="#contact"
+              className="nav-link hidden sm:inline-block px-5 py-2 rounded-xl bg-brand-600 shadow-glow hover:bg-brand-500 hover:shadow-[0_0_60px_-10px_rgba(59,130,246,0.6)] transition-all duration-200"
+            >
+              Contact
+            </a>
+          </li>
         </ul>
+      </div>
+
+      {showNav && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className="absolute top-16 left-0 w-full bg-slate-950/95 backdrop-blur-md border-b border-white/10 py-6 md:py-8"
+        >
+          <div className="container flex flex-col items-center gap-6 px-4 md:px-8">
+            {navLinks.map(({ link, label }) => (
+              <Link
+                key={link}
+                onClick={() => onShowNav((prev) => !prev)}
+                to={link}
+                smooth
+                duration={500}
+                className={({ isActive }) =>
+                  `text-xl font-medium ${(activeSection === link || isActive)
+                    ? "text-brand-400"
+                    : "text-slate-300"
+                } transition-colors duration-200`
+                }
+              >
+                {label}
+              </Link>
+            ))}
+            <a
+              onClick={() => onShowNav((prev) => !prev)}
+              href="#contact"
+              className="btn-primary"
+            >
+              Get in Touch
+            </a>
+          </div>
+        </motion.div>
       )}
     </nav>
   );
